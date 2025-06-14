@@ -1,3 +1,5 @@
-# AlgoMaster - "Algorithm Learning and Visualization Platform"
+# AlgoMaster 
 <br>
-Author - Saniya Bhagatgit 
+Algorithm Learning and Visualization Platform
+<br>
+Author - Saniya Bhagat  
