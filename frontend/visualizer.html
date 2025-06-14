@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AlgoMaster Visualizer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+  <nav>
+    <a href="index.html">HOME</a>
+  </nav>
+
+  <h1>Visualize your Algorithm here</h1>
+
+  <div class="form-container">
+    <form action="../backend/add_to_visualizer.php" method="POST">
+
+      <label for="algorithm_name">Add Algorithm to Visualizer:</label>
+      <select name="algorithm_name" id="algorithm_name">
+        <option value="Bubble Sort">Insertion Sort</option>
+        <option value="Selection Sort">Selection Sort</option>
+        <option value="Insertion Sort">Insertion Sort</option>
+        <option value="Bubble Sort">Bubble Sort</option>
+        <option value="Merge Sort">Merge Sort</option>
+        <option value="Quick Sort">Quick Sort</option>
+        <option value="Radix Sort">Radix Sort</option>
+        <option value="Bucket Sort">Bucket Sort</option>
+        <option value="Linear Search">Linear Search</option>
+        <option value="Binary Search">Binary Search</option>
+      </select>
+      <input type="submit" name="add_to_visualizer" value="Add to Visualizer">
+    </form>
+    <br>
+    <form action="../backend/add_to_choice.php" method="POST">
+      <label for="algorithm_name">Add Algorithm to Choice:</label>
+      <select name="algorithm_name" id="algorithm_name">
+        <option value="Selection Sort">Selection Sort</option>
+        <option value="Insertion Sort">Insertion Sort</option>
+        <option value="Bubble Sort">Bubble Sort</option>
+        <option value="Merge Sort">Merge Sort</option>
+        <option value="Quick Sort">Quick Sort</option>
+        <option value="Radix Sort">Radix Sort</option>
+        <option value="Bucket Sort">Bucket Sort</option>
+        <option value="Linear Search">Linear Search</option>
+        <option value="Binary Search">Binary Search</option>
+      </select>
+      <input type="submit" name="add_to_choice" value="Add to Choice">
+    </form>
+    <br>
+    <br>
+    <hr>
+  <div class="container text-center mt-4">
+    <label>Enter Array Size:
+      <input id="arr_sz" type="number" min="1" max="100" value="10">
+    </label>
+    <button class="btn btn-primary newArray">Generate New Array</button>
+    <br>
+    <br>
+  </div>
+  <br>
+
+  <br>
+  <div id="bars" class="flex-container"></div>
+  <br>
+
+  <div class="controls">
+<br>
+    <div class="button-grid">
+      <button class="btn btn-custom selectionSort">Selection Sort</button>
+      <button class="btn btn-custom insertionSort">Insertion Sort</button>
+      <button class="btn btn-custom bubbleSort">Bubble Sort</button>
+      <button class="btn btn-custom quickSort">Quick Sort</button>
+      <button class="btn btn-custom mergeSort">Merge Sort</button>
+      <button class="btn btn-custom radixSort">Radix Sort</button>
+      <button class="btn btn-custom bucketSort">Bucket Sort</button>
+      <br>
+
+    <input type="number" id="searchElement" placeholder="Enter element to search">
+  
+      <button class="btn btn-custom linearSearch">Linear Search</button>
+      <button class="btn btn-custom binarySearch">Binary Search</button>
+    </div>
+    <br>
+    <br>
+    <hr>
+
+    <a href="feedback.html" class="feedback-btn">Give Your Feedback</a>
+
+  <footer>
+    <p>© 2025 AlgoMaster Saniya Bhagat | All Rights Reserved</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="final_sorting.js"></script>
+  <script src="js_files/bubble1.js"></script>
+  <script src="js_files/insertion1.js"></script>
+  <script src="js_files/merge1.js"></script>
+  <script src="js_files/quick1.js"></script>
+  <script src="js_files/selection1.js"></script>
+  <script src="js_files/radix.js"></script>
+  <script src="js_files/bucket.js"></script>
+  <script src="js_files/linearsearch.js"></script>
+  <script src="js_files/binarysearch.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const arraySizeInput = document.getElementById("arr_sz");
+      const newArrayBtn = document.querySelector(".newArray");
+      const barsContainer = document.getElementById("bars");
+
+      function createNewArray(size) {
+        barsContainer.innerHTML = '';
+        for (let i = 0; i < size; i++) {
+          const div = document.createElement("div");
+          div.className = "bar";
+          div.innerText = Math.floor(Math.random() * 100) + 1;
+          barsContainer.appendChild(div);
+        }
+      }
+
+      newArrayBtn.addEventListener("click", () => {
+        const size = parseInt(arraySizeInput.value);
+        if (size > 0 && size <= 100) {
+          createNewArray(size);
+        } else {
+          alert("Please enter a number between 1 and 100.");
+        }
+      });
+
+      createNewArray(parseInt(arraySizeInput.value) || 10);
+    });
+  </script>
+
+  <style>
+
+
+.newArray {
+  /* background-color: #f2eef4; */
+  color: rgb(0, 0, 0);
+  padding: 14px;
+  font-size: 24px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border: none;
+  margin-left: 20px;
+  border-radius: 5px;
+
+}
+
+.newArray:hover {
+  text-decoration: underline;
+
+}
+
+    body {
+    
+      background-color: #fdf0fa;
+
+
+      color: #2e1d39;
+    font-family: 'Times New Roman', Times, serif;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav {
+      background-color: #3886ba;
+      text-align: center;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+
+    nav a {
+      color: rgb(0, 0, 0);
+      font-size: 28px;
+      text-decoration: none;
+      padding: 15px;
+      margin: 0 10px;
+      border-radius: 4px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    nav a:hover {
+      background-color: #ecb756;
+      color: black;
+    }
+
+    h1 {
+      background-color: #513770;
+      color: rgb(249, 230, 196);
+      padding: 15px;
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+      font-size: 38px;
+    }
+  .btn{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    color: black;
+    /* background-color: #f12540; */
+  }
+    .controls, .form-container {
+      max-width: 10000px;
+      margin: 30px auto;
+      /* background-color: #f7e3f3; */
+      text-align: center;
+    }
+
+
+    .controls h3{
+      font-size: 35px;
+      color: black;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      text-align: center;
+      margin: 15px;
+      margin-bottom: 0px;
+    }
+   .form-container label{
+    font-size: 25px;
+    font-family:  'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    margin: 10px;
+    padding-left: 50px;
+ 
+ }
+    .button-grid {
+      display:block;
+      grid-template-columns: repeat(auto-fit, minmax(2000px, 1fr));
+      gap: 25px;
+      justify-items: center;
+      margin: 10px ;
+    }
+.form-container 
+    .btn-custom {
+      background-color: #b775a9;
+      color: rgb(6, 6, 6);
+      border: none;
+      padding: 15px;
+      font-size: 29px;
+      width: 150px;
+      border-radius: 5px;
+      margin: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn-custom:hover {
+     
+      transform: scale(1.05);
+    }
+  
+#bars {
+      text-align: center;
+      font-size: larger;
+      margin: 30px 0;
+  
+    }
+
+    .bar {
+      display: inline-block;
+      padding: 20px;
+      margin: 15px;
+      background: #707eaa;
+      color: rgb(0, 0, 0);
+      font-size: larger;
+      width: 75px;
+      align-items: center;
+      height: 75px;
+      margin-top: 0px;
+      text-align: center;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    input[type="number"], select {
+      padding: 10px;
+      font-size: 20px;
+      border-radius: 5px;
+      margin-top: 10px;
+      width: 300px;
+      margin-left: 15px;
+      height: 55px;
+    }
+
+    input[type="submit"] {
+      /* width: 200px; */
+      padding: 10px ;
+      background-color: #c40303;
+      color: rgb(255, 255, 255);
+      margin-left: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 25px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    /* color: black; */
+   
+      margin-top: 0px;
+    
+    }
+
+    .feedback-btn {
+      display: inline-block;
+      margin: 20px auto 10px;
+      padding: 12px 25px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     margin-bottom: 25px;
+      color: rgb(11, 11, 11);
+      font-size: 35px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .feedback-btn:hover {
+      text-decoration: underline;
+      /* transform: scale(1.05); */
+      color: black;
+    }
+
+    .logout {
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin: 30px ;
+   
+    }
+
+    .logout button {
+      padding: 15px;
+   
+      margin-top: 5px;
+      font-size: 25px;
+      color: rgb(0, 0, 0);
+      border: none;
+     
+   
+    }
+   .logout button:hover{
+    text-decoration: underline;
+   }
+   
+    footer {
+      background-color: #3886ba;
+      color: #000000;
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 25px;
+      padding: 15px ;
+      margin-top: 10px;
+    }
+  </style>
+</body>
+</html>

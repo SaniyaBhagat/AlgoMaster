@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | AlgoMaster</title>
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #70030e;
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      font-size: 22px;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 18px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 14px 28px;
+      font-size: 25px;
+      background-color: #b570f1;
+      color:black;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+
+    .contact-info {
+        font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 25px;
+      color: #5f0202;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Contact Us</h1>
+
+    <form action="#" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h2>Our Contact Info</h2>
+      <p><b>Email: </b> bhagatsaniya2005@gmail.com</p>
+      <p><b>Phone: </b> 8237879945</p>
+    </div>
+  </div>
+
+</body>
+</html>

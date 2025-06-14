@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Selection Sort | AlgoMaster</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="visualizer.html">Visualizer</a>
+  </nav>
+
+  <br>
+  <h1>Selection Sort</h1>
+  <div class="container">
+    <div class="section">
+      <h2><i class="fas fa-book"></i> Definition</h2>
+      <p><strong>Selection Sort</strong> is a simple comparison-based sorting algorithm that divides the array into a sorted and unsorted part. <br> It repeatedly selects the smallest (or largest) element from the unsorted section and swaps it with the first unsorted element.</p>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-code"></i> Pseudocode</h2>
+      <pre>
+for i = 0 to n-1:
+    min_index = i
+    for j = i+1 to n:
+        if arr[j] < arr[min_index]:
+            min_index = j
+    swap arr[i] with arr[min_index]
+      </pre>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-tachometer-alt"></i> Time & Space Complexity</h2>
+      <ul>
+        <li><strong>Best Case:</strong> O(n²)</li>
+        <li><strong>Average Case:</strong> O(n²)</li>
+        <li><strong>Worst Case:</strong> O(n²)</li>
+        <li><strong>Space:</strong> O(1) – in-place sort</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-lightbulb"></i> Real-World Applications</h2>
+      <ul>
+        <li>Simple sorting tasks for small datasets.</li>
+        <li>Good for teaching basic sorting logic.</li>
+        <li>Useful when memory writes are expensive (as it minimizes swaps).</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-chalkboard-teacher"></i> Real-Life Analogy</h2>
+      <p>Imagine selecting the shortest student in a line and moving them to the front. You then repeat the process for the rest of the line. That’s Selection Sort!</p>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-keyboard"></i> Try It Yourself</h2>
+      <textarea id="inputArray" placeholder="Enter numbers separated by commas" rows="2" style="width:90%; margin-left: 20px;padding:10px; align-items: center;font-size:20px;"></textarea><br>
+      <button onclick="runSelectionSort()" style="margin-top:20px; padding:10px;margin-left: 150px; background-color:#c97a0c; color:rgb(0, 0, 0);font-size:25px;font-family:'Times New Roman', Times, serif;border:none; border-radius:6px;">Run Selection Sort</button>
+      <p id="output" style="margin-top:25px;"></p>
+    </div>
+
+    <div class="image-wrapper">
+      <img src="images/selection-sort.png" alt="Selection Sort Visualization">
+    </div>
+  </div>
+
+  <div class="try-button">
+    <a href="visualizer.html">Try Selection Sort Visualization</a>
+  </div>
+
+  <div class="footer">
+    © 2025 AlgoMaster Saniya Bhagat  |  All Rights Reserved.
+  </div>
+
+  <script>
+    function runSelectionSort() {
+      let arr = document.getElementById("inputArray").value.split(",").map(Number);
+      let n = arr.length;
+      for (let i = 0; i < n - 1; i++) {
+        let minIdx = i;
+        for (let j = i + 1; j < n; j++) {
+          if (arr[j] < arr[minIdx]) {
+            minIdx = j;
+          }
+        }
+        [arr[i], arr[minIdx]] = [arr[minIdx], arr[i]];
+      }
+      document.getElementById("output").innerText = "Sorted Array: " + arr.join(", ");
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: rgb(243, 243, 243);
+      color: #1a1a1a;
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      background-color: #513770;
+      color: rgb(249, 230, 196);
+      padding: 15px;
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+      font-size: 38px;
+    }
+    nav {
+      background-color: #a9906e;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      margin-top: 5px;
+      height: 30px;
+    }
+
+    nav a {
+      font-size: 25px;
+      padding: 15px;
+      margin: 10px;
+      background-color: #573d38;
+      color: white;
+      text-decoration: none;
+      border-radius: 3px;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      transition: transform 0.2s ease;
+    }
+
+    nav a:hover {
+      background-color: #de8df5;
+      transform: scale(1.07);
+      color: black;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 55px;
+    }
+
+    .section {
+      background-color: #d4bcd7;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      transition: transform 0.1s;
+    }
+
+    .section:hover {
+      transform: scale(1.05);
+    }
+
+    .section h2 {
+      font-size: 35px;
+      color: #700606;
+      margin-bottom: 20px;
+      border-bottom: 0.5px solid #2f2f2f;
+      padding-bottom: 25px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      text-align: center;
+    }
+
+    .section p,
+    .section ul,
+    .section pre {
+      font-size: 22px;
+      line-height: 1.6;
+      color: black;
+    }
+
+    .section ul {
+      padding-left: 20px;
+    }
+
+    .section li {
+      margin-bottom: 5px;
+    }
+
+    .section pre {
+      background-color: #e5d9f6;
+      padding: 5px;
+      border-left: 2px solid #93329e;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .image-wrapper {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+
+    .image-wrapper img {
+      max-width: 650px;
+      width: 100%;
+      height: 500px;
+      border-radius: 8px;
+      transition: transform 0.4s ease;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-wrapper img:hover {
+      transform: scale(1.08);
+    }
+
+    .try-button {
+      text-align: center;
+      margin: 40px 0;
+      margin-top: 25px;
+    }
+
+    .try-button a {
+      padding: 12px 28px;
+      background-color: #925611;
+      color: white;
+      border-radius: 8px;
+      font-size: 23px;
+      text-decoration: none;
+      font-family: 'Times New Roman', Times, serif;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .try-button a:hover {
+      background-color: #c47bf1;
+      transform: scale(1.05);
+      color: black;
+    }
+
+    .footer {
+      background-color: #25304f;
+      color: rgb(238, 235, 180);
+      text-align: center;
+      padding: 25px;
+      font-size: 22px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .image-wrapper img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</body>
+</html>

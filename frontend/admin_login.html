@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login - AlgoMaster</title>
+</head>
+<body>
+    <h2>Admin Login</h2>
+    <form action="../backend/admin_login.php" method="POST">
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+    <style>
+        body {
+            background-color: #e6e6e6;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+    
+        h2 {
+            text-align: center;
+            margin: 0;
+            padding: 5px;
+            color: #8b0303;
+            margin-top: 0px;
+            font-size: 40px;
+        }
+        form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 390px;
+            margin-top: 20px;
+        }
+    
+        label {
+            display: block;
+            font-size: 28px;
+            margin-bottom: 3px;
+            color:black;
+         
+        }
+    
+        input[type="password"],
+        input[type="email"]
+         {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 8px;
+            border: 1px solid #171212;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+    
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #C52F2F;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #aa2424;
+        }
+        </style>
+</body>
+</html>

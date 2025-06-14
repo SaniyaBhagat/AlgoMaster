@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Linear Search | AlgoMaster</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="visualizer.html">Visualizer</a>
+  </nav>
+
+  <br>
+  <h1>Linear Search </h1>
+  <div class="container">
+    <div class="section">
+      <h2><i class="fas fa-book"></i> Definition</h2>
+      <p><strong>Linear Search</strong> is the simplest searching algorithm that checks each element in a list sequentially until the target element is found or the list ends.</p>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-code"></i> Pseudocode</h2>
+      <pre>
+function linearSearch(arr, target):
+    for i = 0 to arr.length - 1:
+        if arr[i] == target:
+            return i
+    return -1
+      </pre>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-tachometer-alt"></i> Time & Space Complexity</h2>
+      <ul>
+        <li><strong>Best Case:</strong> O(1) – if target is at the beginning</li>
+        <li><strong>Average Case:</strong> O(n)</li>
+        <li><strong>Worst Case:</strong> O(n)</li>
+        <li><strong>Space:</strong> O(1)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-lightbulb"></i> Real-World Applications</h2>
+      <ul>
+        <li>Searching items in small unsorted lists.</li>
+        <li>Useful when list is short or unsorted and infrequently searched.</li>
+        <li>Checking presence of a value before performing an operation.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-chalkboard-teacher"></i> Real-Life Analogy 💡</h2>
+      <p>Imagine searching for a name in a randomly ordered attendance sheet. You check each name one-by-one until you find the one you're looking for. That's Linear Search!</p>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-keyboard"></i> Try It Yourself</h2>
+      <textarea id="inputArray" placeholder="Enter array (comma-separated)" rows="2" style="width:90%; margin-left: 20px;padding:10px; font-size:20px;"></textarea><br>
+      <input type="text" id="target" placeholder="Enter value to search" style="margin:15px 0 10px 20px; padding:8px; font-size:18px;">
+      <br>
+      <button onclick="runLinearSearch()" style="padding:10px 20px; margin-left: 150px; background-color:#8e38f0; color:black; font-size:22px; border:none; border-radius:6px;">Search</button>
+      <p id="output" style="margin-top:20px;"></p>
+    </div>
+
+    <div class="image-wrapper">
+      <img src="images/linear_search.jpg" alt="Linear Search Visualization">
+    </div>
+  </div>
+
+  <div class="try-button">
+    <a href="visualizer.html">Try Linear Search Visualization</a>
+  </div>
+
+  <div class="footer">
+    © 2025 AlgoMaster Saniya Bhagat  |  All Rights Reserved.
+  </div>
+
+  <script>
+    function runLinearSearch() {
+      let arr = document.getElementById("inputArray").value.split(",").map(Number);
+      let target = Number(document.getElementById("target").value);
+      let found = -1;
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) {
+          found = i;
+          break;
+        }
+      }
+      document.getElementById("output").innerText = (found !== -1)
+        ? "Element found at index: " + found
+        : "Element not found in the array.";
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: rgb(243, 243, 243);
+      color: #1a1a1a;
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      background-color: #513770;
+      color: rgb(249, 230, 196);
+      padding: 15px;
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+      font-size: 38px;
+    }
+    nav {
+      background-color: #a9906e;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      margin-top: 5px;
+      height: 30px;
+    }
+
+    nav a {
+      font-size: 25px;
+      padding: 15px;
+      margin: 10px;
+      background-color: #573d38;
+      color: white;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: transform 0.2s ease;
+    }
+
+    nav a:hover {
+      background-color: #de8df5;
+      transform: scale(1.07);
+      color: black;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 55px;
+    }
+
+    .section {
+      background-color: #d4bcd7;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      transition: transform 0.1s;
+    }
+
+    .section:hover {
+      transform: scale(1.05);
+    }
+
+    .section h2 {
+      font-size: 35px;
+      color: #700606;
+      margin-bottom: 20px;
+      border-bottom: 0.5px solid #2f2f2f;
+      padding-bottom: 25px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      text-align: center;
+    }
+
+
+    .section p,
+    .section ul,
+    .section pre {
+      font-size: 22px;
+      line-height: 1.6;
+      color: black;
+    }
+
+    .section ul {
+      padding-left: 20px;
+    }
+
+    .section li {
+      margin-bottom: 5px;
+    }
+
+    .section pre {
+      background-color: #e5d9f6;
+      padding: 10px;
+      border-left: 2px solid #93329e;
+      border-radius: 4px;
+      font-size: 18px;
+      overflow-x: auto;
+    }
+
+    .image-wrapper {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+
+    .image-wrapper img {
+      max-width: 650px;
+      width: 100%;
+      height: 500px;
+      border-radius: 8px;
+      transition: transform 0.4s ease;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-wrapper img:hover {
+      transform: scale(1.08);
+    }
+
+    .try-button {
+      text-align: center;
+      margin: 40px 0;
+      margin-top: 25px;
+    }
+
+    .try-button a {
+      padding: 12px 28px;
+      background-color: #925611;
+      color: white;
+      border-radius: 8px;
+      font-size: 23px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .try-button a:hover {
+      background-color: #c47bf1;
+      transform: scale(1.05);
+      color: black;
+    }
+
+    .footer {
+      background-color: #25304f;
+      color: rgb(238, 235, 180);
+      text-align: center;
+      padding: 25px;
+      font-size: 22px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .image-wrapper img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</body>
+</html>

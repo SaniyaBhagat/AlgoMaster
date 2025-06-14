@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to AlgoMaster</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span>AlgoMaster</span>
+    </div>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="aboutus.html">ABOUT US</a>
+      <div class="dropdown">
+        <a href="algorithms.html" class="dropbtn">ALGORITHMS</a>
+        <div class="dropdown-content">
+          <a href="insertion.html">Insertion Sort</a>
+          <a href="selection.html">Selection Sort</a>
+          <a href="bubble.html">Bubble Sort</a>
+          <a href="merge.html">Merge Sort</a>
+          <a href="quick.html">Quick Sort</a>
+          <a href="radix.html">Radix Sort</a>
+          <a href="bucket.html">Bucket Sort</a>
+          <a href="linearsearch.html">Linear Search</a>
+          <a href="binarysearch.html">Binary Search</a>
+        </div>
+      </div>
+      <a href="visualizer.html">VISUALIZER</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Decode the Logic of Algorithms</h1>
+    <p>AlgoMaster is your interactive space to understand and visualize popular sorting and searching algorithms.<br>
+    Explore and enhance your understanding of algorithmic efficiency with visual demonstrations.<br>
+    <p>Interactive demos that simplify sorting, searching, and more — all in one place.</p>
+  </p>  
+  </div>
+
+  <div class="algos">
+    <h2>Start Exploring Algorithms:</h2>
+    <br>
+    <div class="grid-container">
+      <a href="insertion.html">Insertion Sort</a>
+      <a href="selection.html">Selection Sort</a>
+      <a href="bubble.html">Bubble Sort</a>
+      <a href="merge.html">Merge Sort</a>
+      <a href="quick.html">Quick Sort</a>
+      <a href="radix.html">Radix Sort</a>
+      <a href="bucket.html">Bucket Sort</a>
+      <a href="linearsearch.html">Linear Search</a>
+      <a href="binarysearch.html">Binary Search</a>
+    </div>
+  </div>
+
+  <div class="visual">
+    <a href="visualizer.html"><strong>Go to Visualizer</strong></a>
+  </div>
+<br>
+<br>
+  <footer>
+    <img src="images/footer.png" alt="AlgoFlow Logo" class="footer-logo">
+    <p>© 2025 AlgoMaster Saniya Bhagat | All Rights Reserved</p>
+  </footer>
+
+
+  <style>
+    body {
+      background-color: #ecd7fb;
+      color: #022155;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #023149;
+      padding: 15px 40px;
+      color: white;
+    }
+
+    .logo span {
+      font-size: 60px;
+      font-weight: lighter;
+      color: rgb(181, 150, 12);
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 15px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      background-color: #fcf6e4;
+      color: black;
+      border-radius: 5px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #000;
+      min-width: 160px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: white;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .hero {
+      background-color: #f1e2fa;
+      text-align: center;
+      margin-bottom: 5px;
+      padding: 60px 20px 30px;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      color: #a80000;
+      animation: moveRight 10s linear infinite;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      white-space: nowrap;
+    }
+
+    .hero p {
+      font-size: 26px;
+      color: #042644;
+      max-width: 9000px;
+      margin: 0 auto;
+      /* background-color: #d6c1e0; */
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    @keyframes moveRight {
+      0% { transform: translateX(-80%); }
+      100% { transform: translateX(80%); }
+    }
+
+    .algos {
+      margin-top: 5px;
+      padding: 50px 10px;
+      background-color: #f8f4fc;
+      text-align: center;
+    }
+
+    .algos h2 {
+      margin-top: 5px;
+      font-size: 36px;
+      color: #720404;
+      margin-bottom: 30px;
+      font-family: 'Times New Roman', Times, serif;
+
+    }
+
+    .grid-container {
+      margin-top: 15px;
+      
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+      padding: 0 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .grid-container a {
+      width: 255px;
+      padding: 20px;
+     /* background-color: white; */
+      font-size: 32px;
+      color: rgb(0, 0, 0);
+      background: linear-gradient(to right, #c9505e, #9d5c9e);
+      border-radius: 5px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .grid-container a:hover {
+      background-color: #1b3a5b;
+      transform: scale(1.09);
+    }
+
+    .visual {
+      /* background-color: #f6f0fa; */
+      margin-top: 30px;
+      /* height: 15px; */
+      text-align: center;
+    }
+
+    .visual a {
+      padding: 15px 10px ;
+      margin-top: 10px;
+      font-size: 30px;
+      border-radius: 25px;
+      color: #000000;
+      text-decoration: none;
+      font-family:'Times New Roman', Times, serif;
+      transition: transform 0.3s ease;
+    }
+
+    .visual a:hover {
+      background-color: #9186f6;
+      transform: scale(1.08);
+    }
+
+    footer {
+      padding: 15px 10px ;
+      
+      background: #0b3042;
+      color: rgb(253, 246, 232);
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 6px;
+    }
+
+    .footer-logo {
+      width: 200px;
+      height: 180px;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      font-size: 23px;
+      margin-top: 15px;
+      margin: 0;
+    }
+  </style>
+</body>
+</html>
+
+
+
+
+
